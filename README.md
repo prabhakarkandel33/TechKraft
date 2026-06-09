@@ -209,6 +209,8 @@ unnecessarily.
 ## Learning Reflection
 
 Began with writing the authorization checks within each route function directly until realizing that `Depends()` allows one to build off another, so `get_current_admin` simply depends on `get_current_user`. This refactoring helped clean up the RBAC design compared to the initial version. If I had more time, I would work on an SSE streaming endpoint to update scores in real-time. Took a brief look at the `StreamingResponse` API but decided against implementing it to prevent a half-baked submission.
+
+
 ---
 
 ## What's Not Implemented
@@ -217,6 +219,12 @@ Began with writing the authorization checks within each route function directly 
   rather than attempted poorly. The mock summary endpoint demonstrates
   understanding of async external calls which is the same underlying
   pattern.
+
+- The admin is seeded only upon startup and you must login with that credential specifically i would add a new helper where you can create admin on your
+own with a management command if given time, since the specifications were not mentioned in the assingment file and it is not that big of a feature i decided
+not to go through with it.
+
+
 
 ---
 
